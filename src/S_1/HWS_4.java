@@ -47,8 +47,10 @@ public class HWS_4 {
         String operations = scanOperations();
         System.out.println("Введите второе число: ");
         int num2 = scanNumber();
-        double result = getResult(operations, num1, num2);
-        System.out.printf("%d %s %d = %d", num1, operations, num2, result);
+        int result = getResult(operations, num1, num2);
+        Double result_d = new Double(result);
+        System.out.printf("%d %s %d = %d" + "\n", num1, operations, num2, result);
+        System.out.printf("%d %s %d = %f", num1, operations, num2, result_d);
 
     }
 }
