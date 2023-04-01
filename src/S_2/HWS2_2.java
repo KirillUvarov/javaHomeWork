@@ -15,28 +15,30 @@ import java.util.Map;
 
 public class HWS2_2 {
     public static void main(String[] args) throws IOException {
-        FileInputStream inFile = new FileInputStream("Json.txt");
-        byte[] string = new byte[inFile.available()];
-        inFile.read(string);
-        String newText = new String(string);
-        inFile.close();
-        String str = newText.replace(
+        FileInputStream inFile = new FileInputStream("Json.txt"); //Открываем файл
+        byte[] string = new byte[inFile.available()]; //Резервируем в памяти массив
+        inFile.read(string); //Считываем файл, как строку
+        String newText = new String(string); //Задаём переменную с типом строки
+        inFile.close(); //Закрываем файл
+        String str = newText.replace( //Заменяем символы
                 "{", "").replace(
                         "}", "").replace(
                                 "\"", "").replace(
                                         "[", "").replace(
                                                 "]", "" );
-        String[] str2 = str.split(", ");
-        //System.out.println(Arrays.toString(str2));
+        String[] str2 = str.split(", "); // Парсим текст через запятую
+        //System.out.println(Arrays.toString(str2)); // Выводим массив из ключ:значение
 
-        Map<String, String> dictionary = new HashMap<String, String>();
+        Map<String, String> dictionary = new HashMap<String, String>(); //Создаём хэш-таблицу
 
         for (String item : str2) {
             String[] strNew = item.split(", ");
-            for (String item2 : strNew) {
+            for (String item2 : strNew) { // Разбиваем массив по каждому студенту
                 String[] strNew2 = item2.split(",");
+                //System.out.println(String.format(Arrays.toString(strNew)));// Выводим массив по каждому студенту
                 for (String item3 : strNew2) {
                     String[] strNew3 = item3.split(":");
+                    //System.out.println(String.format(Arrays.toString(strNew3)));
                     dictionary.put(strNew3[0], strNew3[1]);
                 }
                 StringBuilder sb = new StringBuilder();

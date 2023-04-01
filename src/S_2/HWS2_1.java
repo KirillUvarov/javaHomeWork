@@ -24,22 +24,22 @@ public class HWS2_1 {
     }
 
     public static int[] bubbleSort(int arr[]) throws IOException {
-        Logger logger = Logger.getLogger(HWS2_1.class.getName());
-        FileHandler fHandler = new FileHandler("HWS2_1_logger.txt");
-        SimpleFormatter sFormatter = new SimpleFormatter();
-        fHandler.setFormatter(sFormatter);
+        Logger logger = Logger.getLogger(HWS2_1.class.getName()); // Присваиваем функцию логгирования
+        FileHandler fHandler = new FileHandler("HWS2_1_logger.txt"); //Открываем файл для логгирования
+        SimpleFormatter sFormatter = new SimpleFormatter(); //Упрощаем формат из xml в строки
+        fHandler.setFormatter(sFormatter); //Устанавливаем формат
         logger.addHandler(fHandler);
 
         int temp;
-        for (int i = arr.length - 1; i >= 0; i--) {
+        //for (int i = arr.length - 1; i >= 0; i--) {
+        for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - 1; j++) {
-                if (arr[j] < arr[j + 1]) {
+                if (arr[j] > arr[j + 1]) {
                     temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
                 }
             }
-
             logger.info(Arrays.toString(arr));
         }
         return arr;
