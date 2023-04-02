@@ -20,7 +20,7 @@ public class HWS2_2 {
         inFile.read(string); //Считываем файл, как строку
         String newText = new String(string); //Задаём переменную с типом строки
         inFile.close(); //Закрываем файл
-        String str = newText.replace( //Заменяем символы
+        String str = newText.replace( //Заменяем символы Есть replaceAll("[\'{}\\[\\]]", "")equals("фамилия"))...
                 "{", "").replace(
                         "}", "").replace(
                                 "\"", "").replace(
