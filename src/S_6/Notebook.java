@@ -7,7 +7,7 @@ public class Notebook {
     public OS os; //Операционная система
     public String colour; //Цвет корпуса
     public int cost; //Стоимость
-    private boolean availability;
+
 
     public Notebook(String name, int ram, int hdd, OS os, String colour, int cost){ // Описание входных параметров ноутбука
         this.name = name;
@@ -15,28 +15,24 @@ public class Notebook {
         this.hdd = hdd;
         this.os = os;
         this.colour = colour;
+        this.cost = cost;
     }
 
-    public boolean availability(boolean param){
-        return param;
-    } // Характеристика наличия ноутбука в магазине
-
-    public String value (){ // Характеристика ниши ноутбука в соответствии с его стоимостью
-        if (cost > 1000) {
-            String value = "Top";
-        }
-        if (cost <= 1000 && cost >= 500){
-            String value = "Middle";
-        }
-        if (cost < 500){
-            String value = "Budget";
-        }
-        return value();
-    }
+//    @Override
+//    public String toString(){ // Предопределяем метод базового класса
+////        return String.format("Ноутбук: {name: %s, ram: %d, hdd: %d, os: %s, colour: %s, cost: %d}", name, ram, hdd, os, colour);
+//    }
 
     @Override
-    public String toString(){ // Предопределяем метод базового класса
-        return String.format("Ноутбук: {name: %s, ram: %d, hdd: %d, os: %s, colour: %s, cost: %d}", name, ram, hdd, os, colour);
+    public String toString() {
+        return "Notebook{" +
+                "name='" + name + '\'' +
+                ", ram=" + ram +
+                ", hdd=" + hdd +
+                ", os=" + os +
+                ", colour='" + colour + '\'' +
+                ", cost=" + cost +
+                '}';
     }
 
     @Override
@@ -51,4 +47,16 @@ public class Notebook {
     }
 
 
+
+    public int getRam() {
+        return ram;
+    }
+
+    public int getHdd() {
+        return hdd;
+    }
+
+    public OS getOs() {
+        return os;
+    }
 }
