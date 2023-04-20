@@ -19,9 +19,9 @@ public class Main {
         Map<Integer, Notebook> menue = marketMenue();
         for (int i = 0; i < menue.size(); i++) {
             Notebook notebook = menue.get(i);
-            int hdd = notebook.getHdd();
-//            System.out.println(menue.keySet());
-            System.out.println(hdd);
+//            int hdd = notebook.getHdd();
+            System.out.println(notebook.values());
+//            System.out.println(hdd);
         }
 
     }
