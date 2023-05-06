@@ -17,20 +17,13 @@ public class Main {
     }
     public static void main (String[] args) {
         Map<Integer, Notebook> menue = marketMenue();
-        for (int i = 0; i < menue.size(); i++) {
+        for (int i = 0; i < menue.size()+1; i++) {
             Notebook notebook = menue.get(i);
-//            int hdd = notebook.getHdd();
-            System.out.println(notebook.values());
-//            System.out.println(hdd);
+            System.out.println(notebook);
+//            if (OS. == 'Windows')
+
         }
+//        System.out.println(menue);
 
     }
-
-
-
-
-
-
-
-
 }
